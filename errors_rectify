@@ -16,3 +16,15 @@ sudo systemctl status flaskapp
 sudo systemctl reload nginx
 
 http://<your-lightsail-public-ip>
+
+#Deployment Steps
+chmod 400 LightsailDefaultKey-eu-north-1.pem
+ssh -i "LightsailDefaultKey-eu-north-1.pem" ubuntu@13.50.123.45
+http://<your-lightsail-ip>
+
+
+nano setup_flask_nginx.sh
+
+chmod +x setup_flask_nginx.sh
+./setup_flask_nginx.sh
+
