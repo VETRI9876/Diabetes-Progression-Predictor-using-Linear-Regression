@@ -89,4 +89,4 @@ def predict():
         return render_template_string(html_template, prediction=f"Error: {e}", bmi=request.form.get('bmi', ''))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
