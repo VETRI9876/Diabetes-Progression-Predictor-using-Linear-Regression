@@ -1,0 +1,18 @@
+🛠 Solution: Reduce Gunicorn Workers to 1
+
+sudo nano /etc/systemd/system/flaskapp.service
+
+ExecStart=/home/ubuntu/flaskapp/venv/bin/gunicorn --workers 1 --bind 127.0.0.1:8000 app:app
+
+Reload the systemd daemon and restart the service
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl restart flaskapp
+Then check status again:
+
+sudo systemctl status flaskapp
+
+sudo systemctl reload nginx
+
+http://<your-lightsail-public-ip>
